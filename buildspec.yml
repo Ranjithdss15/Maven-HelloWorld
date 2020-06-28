@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
     - echo "Entered the post-build phase"
-    - mv target/*.war ./
+    - mv target/*.war ./app.war
 artifacts:
   files:
-    - *.war
+    - app.war
