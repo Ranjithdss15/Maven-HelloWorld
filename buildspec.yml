@@ -9,15 +9,15 @@ phases:
   build:
     commands:
     - echo "Entered build phase"
-    - mvn clean package
+    - mvn clean install
   post_build:
     commands:
     - echo "Entered the post-build phase"
     - ls
     - cd target && ls  
     - cd ..
-    - cp target/*.war ./app.war
+    - cp target/simple.war ./
     - ls
 artifacts:
   files:
-    - target/simple.war
+    - simple.war
