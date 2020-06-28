@@ -15,7 +15,9 @@ phases:
     - echo "Entered the post-build phase"
     - ls
     - cd target && ls  
+    - cd ..
     - cp target/*.war ./app.war
+    - ls
 artifacts:
   files:
     - target/simple.war
