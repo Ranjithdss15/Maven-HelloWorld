@@ -3,22 +3,19 @@
 
 version: 0.2
 phases:
-  pre_build:
-    commands:
-    - echo "Entered the pre-build phase"
   build:
     commands:
-    - echo "Entered build phase"
+    - echo "Building Maven"
     - mvn clean install
   post_build:
     commands:
-    - echo "Entered the post-build phase"
+    - echo "Preparing war"
     - ls
     - cd target && ls  
     - cd ..
-    - cp target/simple.war ./
+    - cp target/*.war ./app.war
     - ls
 artifacts:
   files:
-    - simple.war
+    - app.war
   discard-paths: yes
